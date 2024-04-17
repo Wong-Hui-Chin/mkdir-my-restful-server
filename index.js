@@ -5,6 +5,7 @@ const port = 3000;
 const bcrypt = require('bcrypt');
 app.use(express.json());
 
+//new user registration
 app.post('/register',async(req,res) => {
   const hash = bcrypt.hashSync(req.body.password, 10);
 
@@ -40,8 +41,8 @@ app.post('/login',async(req,res) => {
 app.get('/')
 
 app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
-});
+   console.log(`Example app listening on port ${port}`)
+})
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const uri = "mongodb+srv://Wong_Hui_Chin:Y0304h1023@cluster0.ucgr9bl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -55,12 +56,19 @@ const client = new MongoClient(uri, {
   }
 });
 
+
 async function run() {
   try {
+    // Connect the client to the server	(optional starting in v4.7)
+    // Send a ping to confirm a successful connection
     await client.connect();
+    //let result = await client.db('BERRDB').collection('students').deleteOne(
+    //  { _id: new ObjectId('660517558d711e579b1621ff')},
+    //)
+    //console.log('Connected successfully to MongoDB')
   } finally {
     // Ensures that the client will close when you finish/error
-    await client.close();
+    // await client.close();
   }
 }
 run().catch(console.dir);
