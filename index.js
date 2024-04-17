@@ -17,7 +17,7 @@ app.post('/register',async(req,res) => {
       email: req.body.email
     }
   )
-  res.send()
+  res.send(result)
 })
 
 app.post('/login',async(req,res) => {
