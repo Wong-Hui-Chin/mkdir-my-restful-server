@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+const bcrypt = require('bcrypt');
 app.use(express.json());
 
 app.post('/register',async(req,res) => {
@@ -59,7 +60,7 @@ async function run() {
     await client.connect();
   } finally {
     // Ensures that the client will close when you finish/error
-    await client.close();
+    //await client.close();
   }
 }
 run().catch(console.dir);
