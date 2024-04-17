@@ -41,7 +41,7 @@ app.post('/login',async(req,res) => {
 app.get('/')
 
 app.listen(port, () => {
-   console.log('Example app listening on port ${port}')
+   console.log(`Server is running at http://localhost:${port}`)
 })
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
