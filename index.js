@@ -17,7 +17,7 @@ app.post('/register',async(req,res) => {
       email: req.body.email
     }
   )
-  res.send('Register successfully')
+  res.send(username,password,name,email)
 })
 
 app.post('/login',async(req,res) => {
