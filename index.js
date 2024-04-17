@@ -36,6 +36,8 @@ app.post('/login',async(req,res) => {
 
 })
 
+app.get('/')
+
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
